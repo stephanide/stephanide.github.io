@@ -6,10 +6,13 @@ function preload() {
 }
 
 
-
+ //var mySecond = "test";
+ 
+ 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth*2, windowHeight*2);
+  frameRate(100);
 }
 
 function draw() {
@@ -30,6 +33,28 @@ function draw() {
   background(200);
   fill(0);
   
+  
+  
+  
+var IE = document.all?true:false
+document.captureEvents(Event.MOUSEMOVE)
+document.onmousemove = getMouseXY;
+
+var tempX = 0
+var tempY = 0
+
+function getMouseXY(e) {
+  console.log(e);
+    tempX = e.clientX
+    tempY = e.clientY
+  document.Show.MouseX.value = tempX
+  document.Show.MouseY.value = tempY
+  return true
+}
+
+
+
+  
 
   
   if (mouseX > windowWidth/2) {
@@ -44,7 +69,7 @@ function draw() {
   
   if (mouseY > windowHeight/2) {
     // bottom left quadrant
-    fill('lime');
+    fill('yellow');
     textFont("Georgia");
     background(255, 0, 0);
     textSize(30);
@@ -56,7 +81,7 @@ function draw() {
     fill('blue');
     textFont("Futura");
     background(255, 255, 0);
-    textSize(50);
+    textSize(200);
     textStyle(ITALIC);
   }
   
@@ -81,21 +106,46 @@ function draw() {
 
  //curve
 noFill();
- curve(windowWidth, 0, windowWidth/2, 200, windowWidth/2, 400, windowWidth, windowHeight);
- stroke(255, 102, 0);
+ curve(width, 0, width/2, height/4, width/2, height/2, width, height);
 
  
- //line
+ //Time
+var myMinute = minute(); 
+text("Current minute: \n:"+myMinute, 100, 150);
+
+var millisecond = millis();
+text("Milliseconds \nrunning: "+millisecond, 250, 150);
+
+
+ //Line Blue
+ var strokeVal = (myMinute/59) * 255;
+  stroke(0,0,strokeVal);
+
 strokeWeight(100); 
-line(200, 200, 500, 700);
+line(200+(millisecond/10), 200, 500, 700);
+
+
+ //Line Red
+ var newDate = new Date();
+  var strokeVal2 = (newDate.getSeconds()/59) * 255;
+
+  stroke(strokeVal2,0, 0);
+
+strokeWeight(100); 
+line(400, 200, 600+(millisecond), 700);
 
 fill(0);
 strokeWeight(0);
-//textSize(20);
-text("DO YOU", (windowWidth/4), (windowHeight/4));
-text("REALLY WANT", ((windowHeight/4)*3),(windowHeight/4)+50);
-text("TO CONCENTRATE", (windowWidth/4), (windowHeight/4)*3);
-text("ON ONE ?", ((windowWidth/4*3)-50), ((windowHeight/4)*3)-50);
- 
+
+
+console.log(windowWidth/4);
+
+text("DO YOU", (width/4)+(strokeVal2), (height/4));
+text("REALLY WANT", ((width/4)*3),(height/4)+(strokeVal2));
+text("TO CONCENTRATE", (width/4)-(strokeVal2), (height/4)*3);
+text("ON ONE ?", ((width/4*3)), ((height/4)*3)-(strokeVal2));
+
+
+
 }
 

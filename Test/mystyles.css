@@ -1,0 +1,22 @@
+.eins {
+	width:100px;
+	height:100px;
+	background-color: yellow;
+	font-family: Times, sans-serif;
+	margin: 30px;
+	padding: 50px;
+	border: 5px dotted black;
+	overflow:auto;
+}
+
+.zwei {
+	width:100px;
+	height:100px;
+	margin-left: 100px;
+	background-color: blue;
+	font-family:Helvetica, Times, sans-serif;
+	font-style: oblique;
+	padding: 50px;
+	border: 5px normal black;
+	overflow:auto;
+}
