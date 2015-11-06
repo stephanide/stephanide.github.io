@@ -2,7 +2,7 @@
 
 var img;
 function preload() {
-  img = loadImage("lib/Rad.jpg");
+  img = loadImage("lib/coffee.png");
 }
 
 
@@ -18,7 +18,6 @@ function setup() {
 function draw() {
 	// place your drawing code here
 	//this is a note
-
   
   var x1 = 10;
   var y1 = 90;
@@ -27,13 +26,11 @@ function draw() {
   
   
   
-  
-  
   //top left quadrant
   background(200);
   fill(0);
   
-  
+
   
   
 var IE = document.all?true:false
@@ -60,9 +57,9 @@ function getMouseXY(e) {
   if (mouseX > windowWidth/2) {
     
     //top right quadrant
-    fill('red');
+    fill('Red');
     textFont("Georgia");
-    background(255);
+    background('LightBlue');
     textSize(100);
     textStyle(BOLD);
   }
@@ -101,8 +98,10 @@ function getMouseXY(e) {
   pop();
   // Fancy!
 
-  //Picture
-  //image(img, (windowWidth/2)-200, (windowHeight/2)-100, 400, 200);
+  
+  
+  
+  
 
  //curve
 noFill();
@@ -116,6 +115,13 @@ text("Current minute: \n:"+myMinute, 100, 150);
 var millisecond = millis();
 text("Milliseconds \nrunning: "+millisecond, 250, 150);
 
+var whatever = new Date();
+var mySeconds = whatever.getSeconds();
+var myMinutes = whatever.getMinutes();
+var myHours = whatever.getHours();
+
+
+text("" +myHours +':' +myMinutes + ':' + mySeconds ,width/2,(height/4)*3);
 
  //Line Blue
  var strokeVal = (myMinute/59) * 255;
@@ -147,5 +153,59 @@ text("ON ONE ?", ((width/4*3)), ((height/4)*3)-(strokeVal2));
 
 
 
+//Quad
+noFill();
+strokeWeight(10);
+stroke('Tomato');
+quad(1200-(millisecond/10), 500-(millisecond/100), 1900, 600, 2000, 1300, 1400, 1100);
+
+
+
+//Picture
+
+var magie = Math.random()*10;
+
+  image(img, (width/4), (height/2)+200, 800+(magie),300+(magie));
+
+
+
+
+//Weather
+
+var randomNumbers = random (0, 100);
+
+noStroke('red');
+textSize(100);
+fill('Mint');
+text("The weather today:", (width/4)*3-400, height-600);
+
+if (randomNumbers < 5){
+  text("Good. =)", (width/4)*3-400, height-500);
+} 
+
+if (randomNumbers >5){
+  text("Bad. =(", (width/4)*3-400, height-400);
+}
+  
+var widthNow = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var heightNow = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;  
+  
+  
+//Key  
+    console.log(key);
+    
+    if (key == "W"){
+      stroke(255);
+        background("red");
+        textAlign("center");
+        text("WORKSHOP", widthNow/2, heightNow/2);
+        
+        
+    }  
 }
 
