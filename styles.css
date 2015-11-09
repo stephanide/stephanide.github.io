@@ -1,8 +1,11 @@
 body{
-    background:yellow;
+    background:gray;
 }
 
 p{
-    background:yellow;
+    background:gray;
     text-align:center;
+}
+a:hover{
+    font-style:bold;
 }
