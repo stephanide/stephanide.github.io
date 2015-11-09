@@ -1,14 +1,47 @@
 //picture loading
 
 var img;
+var co1;
+var co2;
+var co3;
+var dj1;
+var dj2;
+var dj3;
+var workshop1;
+var workshop2;
+var workshop3;
+var lg1;
+var lg2;
+var ny1;
+var ny2;
+var of1;
+var of2;
+var of3;
+
 function preload() {
   img = loadImage("lib/coffee.png");
+  co1 = loadImage("lib/co295_297.png");
+  co2 = loadImage("lib/co400_400.png");
+  co3 = loadImage("lib/co998_300.png");
+  dj1 = loadImage("lib/dj400_320.jpg");
+  dj2 = loadImage("lib/dj600_600.jpg");
+  dj3 = loadImage("lib/dj726_323.png");
+  workshop1 = loadImage("lib/workshop1.jpg");
+  workshop2 = loadImage("lib/workshop2.jpg");
+  workshop3 = loadImage("lib/workshop3.jpg");
+  lg1 = loadImage("lib/lg400_400.gif");
+  lg2 = loadImage("lib/lg720_631.jpg");
+  ny1 = loadImage("lib/ny600_480.jpg");
+  ny2 = loadImage("lib/ny1400_477.jpg");
+  of1 = loadImage("lib/of375_562.jpg");
+  of2 = loadImage("lib/of500_333.jpg");
+  of3 = loadImage("lib/of573_599.png");
+
+  
 }
 
 
- //var mySecond = "test";
- 
- 
+
 
 function setup() {
   createCanvas(windowWidth*2, windowHeight*2);
@@ -52,6 +85,7 @@ function getMouseXY(e) {
 
 
   
+
 
   
   if (mouseX > windowWidth/2) {
@@ -101,19 +135,17 @@ function getMouseXY(e) {
   
   
   
-  
 
- //curve
-noFill();
- curve(width, 0, width/2, height/4, width/2, height/2, width, height);
+
 
  
  //Time
+
 var myMinute = minute(); 
 text("Current minute: \n:"+myMinute, 100, 150);
 
 var millisecond = millis();
-text("Milliseconds \nrunning: "+millisecond, 250, 150);
+text("Milliseconds \nrunning: "+millisecond, 250, 550);
 
 var whatever = new Date();
 var mySeconds = whatever.getSeconds();
@@ -122,23 +154,6 @@ var myHours = whatever.getHours();
 
 
 text("" +myHours +':' +myMinutes + ':' + mySeconds ,width/2,(height/4)*3);
-
- //Line Blue
- var strokeVal = (myMinute/59) * 255;
-  stroke(0,0,strokeVal);
-
-strokeWeight(100); 
-line(200+(millisecond/10), 200, 500, 700);
-
-
- //Line Red
- var newDate = new Date();
-  var strokeVal2 = (newDate.getSeconds()/59) * 255;
-
-  stroke(strokeVal2,0, 0);
-
-strokeWeight(100); 
-line(400, 200, 600+(millisecond), 700);
 
 fill(0);
 strokeWeight(0);
@@ -197,15 +212,131 @@ var heightNow = window.innerHeight
   
   
 //Key  
+fill("LightBlue");
+text("Press a Key", 200, 1300);
+
+
     console.log(key);
     
     if (key == "W"){
-      stroke(255);
-        background("red");
+        background("AntiqueWhite");
         textAlign("center");
-        text("WORKSHOP", widthNow/2, heightNow/2);
-        
+        text("WORKSHOP", windowWidth/2, (windowHeight)*1.5);
+        image(workshop1, 1000, 200, 500, 345);
+        image(workshop2, 1500, 600, 620, 422);
+        image(workshop3, 500, 400, 570, 369);
         
     }  
+    if (key == "L"){
+        fill("red")
+        background("AntiqueWhite");
+        textAlign("center");
+        image(lg1, 1300, 300, 400, 400);
+        image(lg2, 700, 400, 720, 631);
+        text("LOOKING GOOD TODAY", windowWidth/2, (windowHeight)*1.5);
+    }  
+    if (key == "S"){
+        fill("DarkCyan")
+        background("Aquamarine");
+        textAlign("center");
+        text("SEE YOU LATER", windowWidth/2, (windowHeight)*1.5);
+    }  
+    if (key == "R"){
+        fill("SandyBrown")
+        background("DarkCyan");
+        textAlign("center");
+        image(dj1, 70, -30, 400, 320);
+        image(dj2, 800, 200, 600, 600);
+        image(dj3, 1400, 900, 726, 323);
+        text("RESPECT THE DJ", windowWidth/2, (windowHeight)*1.5);
+    }  
+    if (key == "M"){
+        fill("SandyBrown")
+        background("RosyBrown");
+        textAlign("center");
+        text("MAKE UP", windowWidth/2, (windowHeight)*1.5);
+    }  
+    if (key == "F"){
+        fill("RosyBrown")
+        background("SpringGreen");
+        textAlign("center");
+        text("FRIENDS", windowWidth/2, (windowHeight)*1.5);
+    }  
+    
+    
+     if (key == "O"){
+        fill("SpringGreen")
+        background("Red");
+        textAlign("center");
+        image(of1,100,100,375,562);
+        image(of2, 1600,1000,500,333);
+        image(of3, 50,700,573,599);
+        text("OFFENBACH", windowWidth/2, (windowHeight)*1.5);
+    }  
+    if (key == "N"){
+        fill("Red")
+        background("SlateBlue ");
+        textAlign("center");
+        image(ny1, 100,700,573,599);
+        image(ny2, 500,70,1400,477);
+        text("EVER WENT TO NYC?", windowWidth/2, (windowHeight)*1.5);
+    } 
+    if (key == "C"){
+        fill("SlateBlue")
+        background("SlateGray ");
+        textAlign("center");
+        image(co1, 1200,-20,295,297);
+        image(co2, 500,800,400,400);
+        image(co3, 900,0,998,300);
+        text("DO A COLLABORATION", windowWidth/2, (windowHeight)*1.5);
+    }
+    
+    
+ //More Lines  
+    strokeWeight(50);
+    fill("SlateGray");
+    line(100,(strokeVal2),100,(strokeVal2));
+  
+// Get a random element from an array
+var words = [ "apple", "bear", "cat", "dog" ];
+var index = floor(random(words.length));  // Convert to integer
+text(words[index],10,50);  // Displays one of the four words
+
+
+ //curve
+  noFill();
+  strokeWeight(50);
+  stroke("BLUE");
+  curve(width, 0, width/2, height/4, width/2, height/2, width, height);
+
+
+
+ //Line Blue
+ var strokeVal = (myMinute/59) * 255;
+  stroke(0,0,strokeVal);
+
+strokeWeight(100); 
+line(200+(millisecond/10), 200, 500, 700);
+
+
+ //Line Red
+ var newDate = new Date();
+  var strokeVal2 = (newDate.getSeconds()/59) * 255;
+
+  stroke(strokeVal2,0, 0);
+
+strokeWeight(100); 
+line(400, 200, 600+(millisecond), 700);
+
+
+//curve
+  noFill();
+  strokeWeight(50);
+  stroke("Teal");
+  curve(width/4+400, 700, width/4+500, height/2+600, width/4+300, height/4+600, width+400, height+700);
+
+stroke("Orange");
+  bezier(500, 700, 400, 750, 550, 900, 200, 950);
+
 }
 

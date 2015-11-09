@@ -5,6 +5,13 @@ body {
 
 .test {
 	position:absolute;
+	top:500px;
+	left: 100px;
+	background-color:yellow;
+}
+
+.oneliner {
+	position:absolute;
 	top:100px;
 	right: 100px;
 	background-color:yellow;
@@ -15,7 +22,38 @@ body {
 	bottom:-400px;
 	right:-400px;
 	background-color:red;
-	
-	
-	
+}
+
+.technics {
+	position:absolute;
+	border:10px;
+	border-color:black;
+	border-style: solid;
+	top: 1200px;
+	left:1800px;
+}
+
+.device{
+	position:absolute;
+	top:1300px;
+	left:1900px;
+	background-color:yellow;
+	z-index:10;
+}
+
+.iframe{
+	position:absolute;
+	bottom:-600px;
+	right:-1300px;
+	width:300px;
+	height:300px;
+}
+
+
+.iframe2{
+	position:absolute;
+	bottom:60px;
+	right:130px;
+	width:600px;
+	height:600px;
 }

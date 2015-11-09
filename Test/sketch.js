@@ -41,7 +41,7 @@ function draw() {
 
     stroke("yellow");
     strokeWeight(10);
-    noFill();
+    noFill("red");
     ellipse(ellipseX,ellipseY,ellipseWidth,ellipseWidth);
     
 }
