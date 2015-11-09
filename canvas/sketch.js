@@ -368,7 +368,22 @@ var ellipseWidth = Math.random() * 100;
 
     }
     
+    if (key == "G"){
+        fill("MediumVioletRed")
     
+      textAlign("center");
+        
+      var mousePercent = mouseX/width*255;
+      console.log(mousePercent);
+    
+      var newDate = new Date();
+      var strokeVal2 = (newDate.getSeconds()/59) * 255;
+  
+      background(255,mousePercent, 0);
+        
+      text("GRADIENT", windowWidth/2, (windowHeight)*1.5);
+        
+    }
  
   
 // Get a random element from an array
