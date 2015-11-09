@@ -139,13 +139,7 @@ function getMouseXY(e) {
 
 
  
- //Time
 
-var myMinute = minute(); 
-text("Current minute: \n:"+myMinute, 100, 150);
-
-var millisecond = millis();
-text("Milliseconds \nrunning: "+millisecond, 250, 550);
 
 var whatever = new Date();
 var mySeconds = whatever.getSeconds();
@@ -234,15 +228,26 @@ text("Press a Key", 200, 1300);
         image(lg1, 1300, 300, 400, 400);
         image(lg2, 700, 400, 720, 631);
         text("LOOKING GOOD TODAY", windowWidth/2, (windowHeight)*1.5);
-    }  
+    } 
+    
+    
     if (key == "S"){
         fill("DarkCyan")
         background("Aquamarine");
         textAlign("center");
         text("SEE YOU LATER", windowWidth/2, (windowHeight)*1.5);
         textSize(200);
+        //Time
+        var myMinute = minute(); 
+        text("Current minute: \n:"+myMinute, 500, 150);
+
+        var millisecond = millis();
+        text("Milliseconds \nrunning: "+millisecond, 550, 550);
         text("" +myHours +':' +myMinutes + ':' + mySeconds ,width/2,(height/4)+300);
     }  
+    
+    
+    
     if (key == "R"){
         fill("SandyBrown")
         background("DarkCyan");
