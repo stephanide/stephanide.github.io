@@ -14,6 +14,9 @@ var ny2;
 var of1;
 var of2;
 var of3;
+var um1;
+var um2;
+var um3;
 var workshop1;
 var workshop2;
 var workshop3;
@@ -33,6 +36,9 @@ function preload() {
   of1 = loadImage("lib/of375_562.jpg");
   of2 = loadImage("lib/of500_333.jpg");
   of3 = loadImage("lib/of573_599.png");
+  um1 = loadImage("lib/um450_338.jpg");
+  um2 = loadImage("lib/um600_405.jpg");
+  um3 = loadImage("lib/um960_720.jpg");
   workshop1 = loadImage("lib/workshop1.jpg");
   workshop2 = loadImage("lib/workshop2.jpg");
   workshop3 = loadImage("lib/workshop3.jpg");
@@ -181,20 +187,14 @@ image(coffee, (width/4), (height/2)+200, 800+(magie),300+(magie));
 
 //Weather
 
-var randomNumbers = random (0, 100);
+
 
 noStroke('red');
 textSize(100);
 fill('Mint');
-text("The weather today:", (width/4)*3-400, height-600);
 
-if (randomNumbers < 5){
-  text("Good. =)", (width/4)*3-400, height-500);
-} 
 
-if (randomNumbers >5){
-  text("Bad. =(", (width/4)*3-400, height-400);
-}
+
   
 var widthNow = window.innerWidth
 || document.documentElement.clientWidth
@@ -332,6 +332,40 @@ text("Press a Key", 200, 1300);
         image(co2, 500,800,400,400);
         image(co3, 900,0,998,300);
         text("DO A COLLABORATION", windowWidth/2, (windowHeight)*1.5);
+    }
+    if (key == "U"){
+        background("Chartreuse");
+        image(um1, 300,300,450,338);
+        image(um2, 1300,300,600,405);
+        image(um3, 1300,900,960,720);
+        
+//Weather
+var randomNumbers = random (0, 100);
+text("The weather today:", (width/4)*3-400, height-600);
+if (randomNumbers < 5){
+  text("Good. =)", (width/4)*3-400, height-500);
+} 
+
+if (randomNumbers >5){
+  text("Bad. =(", (width/4)*3-400, height-400);
+}
+
+var ellipseWidth = Math.random() * 100;
+    var ellipseHeight = Math.random()* 100; 
+    var ellipseX = Math.random()*width;
+    var ellipseY = Math.random()*height;
+
+    fill("Navy");
+    stroke("Navy");
+    strokeWeight(10);
+    ellipse(ellipseX,ellipseY,ellipseWidth,ellipseWidth);
+
+   
+    noStroke();
+    fill("DarkSeaGreen");
+    textAlign("center");
+    text("MIGHT NEED AN UMBRELLA", windowWidth/2, (windowHeight)*1.5);
+
     }
     
     
