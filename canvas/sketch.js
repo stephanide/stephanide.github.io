@@ -1,15 +1,12 @@
 //picture loading
 
-var img;
+var coffee;
 var co1;
 var co2;
 var co3;
 var dj1;
 var dj2;
 var dj3;
-var workshop1;
-var workshop2;
-var workshop3;
 var lg1;
 var lg2;
 var ny1;
@@ -17,18 +14,18 @@ var ny2;
 var of1;
 var of2;
 var of3;
+var workshop1;
+var workshop2;
+var workshop3;
 
 function preload() {
-  img = loadImage("lib/coffee.png");
+  coffee = loadImage("lib/coffee.png");
   co1 = loadImage("lib/co295_297.png");
   co2 = loadImage("lib/co400_400.png");
   co3 = loadImage("lib/co998_300.png");
   dj1 = loadImage("lib/dj400_320.jpg");
   dj2 = loadImage("lib/dj600_600.jpg");
   dj3 = loadImage("lib/dj726_323.png");
-  workshop1 = loadImage("lib/workshop1.jpg");
-  workshop2 = loadImage("lib/workshop2.jpg");
-  workshop3 = loadImage("lib/workshop3.jpg");
   lg1 = loadImage("lib/lg400_400.gif");
   lg2 = loadImage("lib/lg720_631.jpg");
   ny1 = loadImage("lib/ny600_480.jpg");
@@ -36,6 +33,9 @@ function preload() {
   of1 = loadImage("lib/of375_562.jpg");
   of2 = loadImage("lib/of500_333.jpg");
   of3 = loadImage("lib/of573_599.png");
+  workshop1 = loadImage("lib/workshop1.jpg");
+  workshop2 = loadImage("lib/workshop2.jpg");
+  workshop3 = loadImage("lib/workshop3.jpg");
 
   
 }
@@ -153,7 +153,7 @@ var myMinutes = whatever.getMinutes();
 var myHours = whatever.getHours();
 
 
-text("" +myHours +':' +myMinutes + ':' + mySeconds ,width/2,(height/4)*3);
+
 
 fill(0);
 strokeWeight(0);
@@ -162,7 +162,7 @@ strokeWeight(0);
 console.log(windowWidth/4);
 
 text("PLAY", (width/4)+(strokeVal2), (height/4));
-text("WAIST TIME", ((width/4)*3),(height/4)+(strokeVal2));
+text("WASTE TIME", ((width/4)*3),(height/4)+(strokeVal2));
 text("SEARCH", (width/4)-(strokeVal2), (height/4)*3);
 text("FREE YOUR CURSOR", ((width/4*3)), ((height/4)*3)-(strokeVal2));
 
@@ -180,7 +180,7 @@ quad(1200-(millisecond/10), 500-(millisecond/100), 1900, 600, 2000, 1300, 1400, 
 
 var magie = Math.random()*10;
 
-image(img, (width/4), (height/2)+200, 800+(magie),300+(magie));
+image(coffee, (width/4), (height/2)+200, 800+(magie),300+(magie));
 
 
 
@@ -240,6 +240,8 @@ text("Press a Key", 200, 1300);
         background("Aquamarine");
         textAlign("center");
         text("SEE YOU LATER", windowWidth/2, (windowHeight)*1.5);
+        textSize(200);
+        text("" +myHours +':' +myMinutes + ':' + mySeconds ,width/2,(height/4)+300);
     }  
     if (key == "R"){
         fill("SandyBrown")
@@ -260,7 +262,43 @@ text("Press a Key", 200, 1300);
         fill("RosyBrown")
         background("SpringGreen");
         textAlign("center");
-        text("FRIENDS", windowWidth/2, (windowHeight)*1.5);
+        text("FORMS", windowWidth/2, (windowHeight)*1.5);
+        
+        ///FORMS START
+        //More Lines  
+  strokeWeight(50);
+  fill("SlateGray");
+  line(100,(strokeVal2),100,(strokeVal2));
+    
+  //curve
+  noFill();
+  strokeWeight(50);
+  stroke("BLUE");
+  curve(width, 0, width/2, height/4, width/2, height/2, width, height);
+
+  //Line Blue
+  var strokeVal = (myMinute/59) * 255;
+  stroke(0,0,strokeVal);
+  strokeWeight(100); 
+  line(200+(millisecond/10), 200, 500, 700);
+
+  //Line Red
+  var newDate = new Date();
+  var strokeVal2 = (newDate.getSeconds()/59) * 255;
+  stroke(strokeVal2,0, 0);
+  strokeWeight(100); 
+  line(400, 200, 600+(millisecond), 700);
+
+  //curve
+  noFill();
+  strokeWeight(50);
+  stroke("Teal");
+  curve(width/4+400, 700, width/4+500, height/2+600, width/4+300, height/4+600, width+400, height+700);
+
+  stroke("Orange");
+  bezier(500, 700, 400, 750, 550, 900, 200, 950);
+        
+        ///FORMS END
     }  
     
     
@@ -292,51 +330,14 @@ text("Press a Key", 200, 1300);
     }
     
     
- //More Lines  
-    strokeWeight(50);
-    fill("SlateGray");
-    line(100,(strokeVal2),100,(strokeVal2));
+ 
   
 // Get a random element from an array
 var words = [ "apple", "bear", "cat", "dog" ];
 var index = floor(random(words.length));  // Convert to integer
 text(words[index],10,50);  // Displays one of the four words
 
-
- //curve
-  noFill();
-  strokeWeight(50);
-  stroke("BLUE");
-  curve(width, 0, width/2, height/4, width/2, height/2, width, height);
-
-
-
- //Line Blue
- var strokeVal = (myMinute/59) * 255;
-  stroke(0,0,strokeVal);
-
-strokeWeight(100); 
-line(200+(millisecond/10), 200, 500, 700);
-
-
- //Line Red
- var newDate = new Date();
-  var strokeVal2 = (newDate.getSeconds()/59) * 255;
-
-  stroke(strokeVal2,0, 0);
-
-strokeWeight(100); 
-line(400, 200, 600+(millisecond), 700);
-
-
-//curve
-  noFill();
-  strokeWeight(50);
-  stroke("Teal");
-  curve(width/4+400, 700, width/4+500, height/2+600, width/4+300, height/4+600, width+400, height+700);
-
-stroke("Orange");
-  bezier(500, 700, 400, 750, 550, 900, 200, 950);
+  
 
 }
 
