@@ -1,5 +1,10 @@
 //picture loading
 
+var ax;
+var ay;
+var b1;
+var b2;
+var b3;
 var coffee;
 var co1;
 var co2;
@@ -9,6 +14,9 @@ var dj2;
 var dj3;
 var lg1;
 var lg2;
+var mu1;
+var mu2;
+var mu3;
 var ny1;
 var ny2;
 var of1;
@@ -22,6 +30,11 @@ var workshop2;
 var workshop3;
 
 function preload() {
+  ax = loadImage("lib/ax.png");
+  ay = loadImage("lib/ay.png");
+  b1 = loadImage("lib/b512_512.png");
+  b2 = loadImage("lib/b599_304.jpg");
+  b3 = loadImage("lib/b625_350.jpg");
   coffee = loadImage("lib/coffee.png");
   co1 = loadImage("lib/co295_297.png");
   co2 = loadImage("lib/co400_400.png");
@@ -31,6 +44,9 @@ function preload() {
   dj3 = loadImage("lib/dj726_323.png");
   lg1 = loadImage("lib/lg400_400.gif");
   lg2 = loadImage("lib/lg720_631.jpg");
+  mu1 = loadImage("lib/mu310_310.png");
+  mu2 = loadImage("lib/mu550_731.jpg");
+  mu3 = loadImage("lib/mu600_900.jpg");
   ny1 = loadImage("lib/ny600_480.jpg");
   ny2 = loadImage("lib/ny1400_477.jpg");
   of1 = loadImage("lib/of375_562.jpg");
@@ -117,9 +133,17 @@ function getMouseXY(e) {
     //bottom right quadrant
     fill('blue');
     textFont("Futura");
-    background(255, 255, 0);
+    background("SaddleBrown ");
     textSize(200);
     textStyle(ITALIC);
+  }
+  
+  if (mouseX > (windowWidth-50) && mouseX < windowWidth){
+    image(ax,(windowWidth/2)-300, (windowHeight/2)-300, 600, 600);
+  }
+  
+  if (mouseY > (windowHeight-50) && mouseY < windowHeight){
+    image(ay,(windowWidth/2)-300, (windowHeight/2)-300, 600, 600);
   }
   
   line(x1, y1, x2, y2);
@@ -161,31 +185,8 @@ strokeWeight(0);
 
 console.log(windowWidth/4);
 
-text("PLAY", (width/4)+(strokeVal2), (height/4));
-text("WASTE TIME", ((width/4)*3),(height/4)+(strokeVal2));
-text("SEARCH", (width/4)-(strokeVal2), (height/4)*3);
-text("FREE YOUR CURSOR", ((width/4*3)), ((height/4)*3)-(strokeVal2));
 
 
-
-//Quad
-noFill();
-strokeWeight(10);
-stroke('Tomato');
-quad(1200-(millisecond/10), 500-(millisecond/100), 1900, 600, 2000, 1300, 1400, 1100);
-
-
-
-//Picture
-
-var magie = Math.random()*10;
-
-image(coffee, (width/4), (height/2)+200, 800+(magie),300+(magie));
-
-
-
-
-//Weather
 
 
 
@@ -208,6 +209,7 @@ var heightNow = window.innerHeight
 //Key  
 fill("LightBlue");
 text("Press a Key", 200, 1300);
+text("Type your Name...", (windowWidth)+100, 300);
 
 
     console.log(key);
@@ -258,9 +260,12 @@ text("Press a Key", 200, 1300);
         text("RESPECT THE DJ", windowWidth/2, (windowHeight)*1.5);
     }  
     if (key == "M"){
-        fill("SandyBrown")
-        background("RosyBrown");
+        fill("LightSteelBlue ")
+        background("Gray");
         textAlign("center");
+        image(mu1, 2000, 200, 310, 310);
+        image(mu2, 1000, 300, 550, 731);
+        image(mu3, 400, 900, 600, 900);
         text("MAKE UP", windowWidth/2, (windowHeight)*1.5);
     }  
     if (key == "F"){
@@ -384,12 +389,37 @@ var ellipseWidth = Math.random() * 100;
       text("GRADIENT", windowWidth/2, (windowHeight)*1.5);
         
     }
+    if (key =="Y"){
+      background("NavajoWhite");
+      fill("SlateBlue");
+      textSize(400);
+      text("PLAY", (width/4)+(mySeconds), (height/4));
+      text("WASTE TIME", ((0)),(height/2)+mySeconds);
+      text("SEARCH", (width/4)-mySeconds, (height/4)*3);
+      text("FREE CURSOR", ((100)), ((height/4)+300)-mySeconds);
+      textAlign("center");
+      textSize(100);
+      text("WHAT SHOULD I DO?", windowWidth/2, (windowHeight)*1.5);
+    }
  
+ if (key == "B"){
+        fill("LightCoral")
+        background("DarkSeaGreen");
+        textAlign("center");
+        image(b1, 0,400,512,512);
+        image(b2, 1500,700,599,304);
+        image(b3, 2000, 200,625, 350);
+        
+        var magie = Math.random()*10;
+        image(coffee, (width/4), (height/2)+200, 800+(magie),300+(magie));
+
+        text("</br>", windowWidth/2, (windowHeight)*1.5);
+    } 
   
 // Get a random element from an array
-var words = [ "apple", "bear", "cat", "dog" ];
-var index = floor(random(words.length));  // Convert to integer
-text(words[index],10,50);  // Displays one of the four words
+//var words = [ "apple", "bear", "cat", "dog" ];
+//var index = floor(random(words.length));  // Convert to integer
+//text(words[index],10,50);  // Displays one of the four words
 
   
 

@@ -34,15 +34,7 @@ function draw() {
         
     } 
     
-    var ellipseWidth = Math.random() * 100;
-    var ellipseHeight = Math.random()* 100; 
-    var ellipseX = Math.random()*width;
-    var ellipseY = Math.random()*height;
-
-    stroke("yellow");
-    strokeWeight(10);
-    noFill("red");
-    ellipse(ellipseX,ellipseY,ellipseWidth,ellipseWidth);
+    
     
 }
 
