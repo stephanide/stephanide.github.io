@@ -161,10 +161,10 @@ strokeWeight(0);
 
 console.log(windowWidth/4);
 
-text("DO YOU", (width/4)+(strokeVal2), (height/4));
-text("REALLY WANT", ((width/4)*3),(height/4)+(strokeVal2));
-text("TO CONCENTRATE", (width/4)-(strokeVal2), (height/4)*3);
-text("ON ONE ?", ((width/4*3)), ((height/4)*3)-(strokeVal2));
+text("PLAY", (width/4)+(strokeVal2), (height/4));
+text("WAIST TIME", ((width/4)*3),(height/4)+(strokeVal2));
+text("SEARCH", (width/4)-(strokeVal2), (height/4)*3);
+text("FREE YOUR CURSOR", ((width/4*3)), ((height/4)*3)-(strokeVal2));
 
 
 
@@ -180,7 +180,7 @@ quad(1200-(millisecond/10), 500-(millisecond/100), 1900, 600, 2000, 1300, 1400, 
 
 var magie = Math.random()*10;
 
-  image(img, (width/4), (height/2)+200, 800+(magie),300+(magie));
+image(img, (width/4), (height/2)+200, 800+(magie),300+(magie));
 
 
 
