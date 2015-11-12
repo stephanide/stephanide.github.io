@@ -1,11 +1,11 @@
 body{
-    background:gray;
 }
-
-p{
-    background:gray;
+p{  position:absolute;
     text-align:center;
+    top:400px;
+    right:200px;
+    font-size:20px;
 }
-a:hover{
+p:hover{
     font-style:bold;
 }
